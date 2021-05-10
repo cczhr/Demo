@@ -3,7 +3,7 @@ plugins {
     id 'kotlin-android'
     id 'maven-publish'
 }
-group = 'com.github.cczhr'
+group = 'com.cczhr'
 version = '1.0.0'
 android {
     compileSdkVersion 30
@@ -44,15 +44,16 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
 }
+
+
 afterEvaluate {
     publishing {
         publications {
-            // Creates a Maven publication called "release".
             release(MavenPublication) {
                 from components.release
-                groupId = 'com.github.jitpack'
-                artifactId = 'android-example'
-                version = '1.0'
+                groupId = 'com.cczhr'//创建项目的公司或集团的唯一基本名称
+                artifactId = 'testlib'//项目的唯一名称
+                version = '1.0.0'//版本号
             }
         }
     }
